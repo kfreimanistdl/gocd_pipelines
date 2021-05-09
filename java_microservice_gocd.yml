@@ -21,3 +21,57 @@ pipelines:
                     arguments: 
                       - -c
                       - echo "Building java app"
+      - deploy-dev: 
+          jobs: 
+            build: 
+              tasks: 
+                - exec:
+                    command: bash
+                    arguments: 
+                      - -c
+                      - echo "Deploy to DEV"
+      - test-dev: 
+          jobs: 
+            build: 
+              tasks: 
+                - exec:
+                    command: bash
+                    arguments: 
+                      - -c
+                      - echo "Run tests on DEV"
+      - deploy-int: 
+          jobs: 
+            build: 
+              tasks: 
+                - exec:
+                    command: bash
+                    arguments: 
+                      - -c
+                      - echo "Deploy to INT"
+      - test-int: 
+          jobs: 
+            build: 
+              tasks: 
+                - exec:
+                    command: bash
+                    arguments: 
+                      - -c
+                      - echo "Run tests on INT"
+      - deploy-prod: 
+          jobs: 
+            build: 
+              tasks: 
+                - exec:
+                    command: bash
+                    arguments: 
+                      - -c
+                      - echo "Deploy to PROD"
+      - test-prod: 
+          jobs: 
+            build: 
+              tasks: 
+                - exec:
+                    command: bash
+                    arguments: 
+                      - -c
+                      - echo "Run tests on PROD"
