@@ -4,7 +4,7 @@ pipelines:
   java_microservice:
     group: microservices
     lock_behavior: unlockWhenFinished
-    label_template: 
+    label_template: "${git_java_microservice}"
     materials:
       git_java_microservice:
         git: https://github.com/kfreimanistdl/api_tests_ci.git
