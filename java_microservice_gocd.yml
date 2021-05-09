@@ -66,12 +66,7 @@ pipelines:
             ENV_NAME: dev
           jobs: 
             test: 
-              tasks: 
-                - exec:
-                    command: bash
-                    arguments: 
-                      - -c
-                      - echo "Run tests on DEV"
+              tasks: *test-tasks
       - deploy-int: 
           environment_variables:
             ENV_NAME: int
@@ -83,12 +78,7 @@ pipelines:
             ENV_NAME: int
           jobs: 
             test: 
-              tasks: 
-                - exec:
-                    command: bash
-                    arguments: 
-                      - -c
-                      - echo "Run tests on INT"
+              tasks: *test-tasks
       - deploy-prod: 
           environment_variables:
             ENV_NAME: prod
@@ -100,9 +90,4 @@ pipelines:
             ENV_NAME: prod
           jobs: 
             test: 
-              tasks: 
-                - exec:
-                    command: bash
-                    arguments: 
-                      - -c
-                      - echo "Run tests on PROD"
+              tasks: *test-tasks
